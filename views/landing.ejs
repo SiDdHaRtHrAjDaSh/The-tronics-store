@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/landing_script.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link rel="stylesheet" href='css/checkout.css'>
+  	<title>The Tronic Store</title>
+</head>
+<body>
+	<!-- Title Bar -->
+	<div class="bar">
+		<center><p id="title">THE TRONICS STORE</p></center>
+	</div>
+	<div id="titlebar">THE TRONICS STORE</div>
+	<div class="topnav" id="myTopnav">
+  		<a id="laptop" onclick="get_product(this.id)">LAPTOPS</a>
+  		<a id="mobile" onclick="get_product(this.id)">MOBILES</a>
+  		<a id="camera" onclick="get_product(this.id)">CAMERAS</a>
+  		<a id="console" onclick="get_product(this.id)">CONSOLES</a>
+  		<a id="watch" onclick="get_product(this.id)">WATCH</a>
+  		
+  			<a id="cart" onclick="gotocart()"><img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png" style="width:30px;height:30px;float:right;margin:0px;">
+  			<div id="cart2">Cart</div></a>
+  		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    	<i class="fa fa-bars"></i>
+  		</a>
+	</div>
+	
+	<div style="background : linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);"><center><p style="color: white; font-weight: bold; font-size: 25px;"><br><br><br>Color is the new power.<br><br>Introducing the all the iPhone 11R<br>With A-13 Bionic Chip | Face ID | 3D Touch<br><br><button onclick="view_product(this.id)" id="00100" style="background-color: #1f1f1f; border-radius: 10px; height: 60px; width: 200px; color: white; font-size: 20px; font-weight: bold;">Shop now</button><br><br><br><br></p></center></div>
+	<style>
+		.box{
+		padding-top:20px;
+			height:380px;
+			width:20%;
+			background-color: white;
+			box-shadow:3px 3px 9px #ccc;
+			float:left;
+			margin:30px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		#product_container{
+			padding:30px;
+
+		}
+		.box:hover{
+			transform:scale(1.1);
+			transition: 0.4s ease;
+		}
+		.product_image{
+			height:200px;
+
+		}
+		.product_name{
+			font-size: 28px;
+		}
+
+		.view_button{
+		background : linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);
+			color:white;
+			height:40px;
+
+			width:200px;
+			font-size:20px;
+			margin-top:20px;
+			border:0px;
+			transition:0.2s ease;
+		}
+		.view_button:hover{
+		transform:scale(1.2);
+		}
+
+	</style>
+	<div id="product_container">
+		
+		<div class="box">
+		<img class="product_image" src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341552_sd.jpg">
+		<div class="product_name"> Iphone 11 pro</div>
+		<button class="view_button" id="00001"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://static.digit.in/default/cc533e2c683b95c061080240c957c3f76397eca5.jpeg?tr=1200">
+		<div class="product_name"> Samsung Galaxy M51</div>
+		<button class="view_button" id="00002"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/61n6Ovq6EdL._SL1500_.jpg">
+		<div class="product_name"> one plus 8 pro</div>
+		<button class="view_button" id="00003"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/41-HqZSahZL._SL1000_.jpg">
+		<div class="product_name"> i Phone X</div>
+		<button class="view_button" id="00004"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341552_sd.jpg">
+		<div class="product_name"> i Phone 11 pro max</div>
+		<button class="view_button" id="00005"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://i.gadgets360cdn.com/products/large/Acer-Nitro-5-DB-749x800-1591861689.png">
+		<div class="product_name"> Acer Nitro 5</div>
+		<button class="view_button" id="00006"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/914o5xV1%2B8L._SL1500_.jpg">
+		<div class="product_name"> Asus TUF gaming laptop</div>
+		<button class="view_button" id="00007"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp13touch-silver-select-202005?wid=892&hei=820&&qlt=80&.v=1587459986844">
+		<div class="product_name"> Macbook pro</div>
+		<button class="view_button" id="00008"onclick="view_product(this.id)">View item</button>
+		</div>
+		
+		<div class="box">
+		<img class="product_image" src="https://static.bhphoto.com/images/images2500x2500/1562676695_1492875.jpg">
+		<div class="product_name"> Macbook air</div>
+		<button class="view_button" id="00009"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://create.intel.com/create-with-power/wp-content/uploads/sites/3/2018/06/msi-g65.jpg">
+		<div class="product_name"> MSI GF65 Thin 9se</div>
+		<button class="view_button" id="00010"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/914hFeTU2-L._SL1500_.jpg">
+		<div class="product_name"> Cannon EOS 1500 D</div>
+		<button class="view_button" id="00011"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/51DE4FICRGL.jpg">
+		<div class="product_name"> Nikkon D5600</div>
+		<button class="view_button" id="00012"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://cdn1.smartprix.com/rx-ia0cSNlJ5-w1200-h1200/panasonic-lumix-dc-g.jpg">
+		<div class="product_name"> panasonic DC- GH5GA</div>
+		<button class="view_button" id="00013"onclick="view_product(this.id)">View item</button>
+		</div>
+		<div class="box">
+		<img class="product_image" src="https://www.powerplanetonline.com/cdnassets/gopro_hero_8_black_03_ad_l.jpg">
+		<div class="product_name">Gopro hero 8 </div>
+		<button class="view_button" id="00014"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/81yYzzsro9L._AC_SX569_.jpg">
+		<div class="product_name">cannon EOS 5d mk4 </div>
+		<button class="view_button" id="00015"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/71fp5ankbqL._SX466_.jpg">
+		<div class="product_name">Apple watch series 5</div>
+		<button class="view_button" id="00016"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://m.media-amazon.com/images/I/51G8gR4wGFL.jpg">
+		<div class="product_name">Galaxy watch active 3</div>
+		<button class="view_button" id="00017"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://compass-ssl.xbox.com/assets/3e/87/3e87b313-21dd-452b-9f1e-09ecf2453542.png?n=0202999-CompleteControl_Console-D.png">
+		<div class="product_name">Xbox series S</div>
+		<button class="view_button" id="00018"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://media.playstation.com/is/image/SCEA/playstation-4-slim-vertical-product-shot-01-us-07sep16?$native_t$">
+		<div class="product_name">Playstation 4</div>
+		<button class="view_button" id="00019"onclick="view_product(this.id)">View item</button>
+		</div>
+
+		<div class="box">
+		<img class="product_image" src="https://images-na.ssl-images-amazon.com/images/I/51FMjaFKYNL._SX466_.jpg">
+		<div class="product_name">Nintendo 3ds</div>
+		<button class="view_button" id="00020"onclick="view_product(this.id)">View item</button>
+		</div>
+
+	</div>
+	<!--Footer-->
+	<footer>
+		<div id="productsf">
+			<ul>Products
+				<li>Laptops</li>
+				<li>mobiles</li>
+				<li>cameras</li>
+				<li>consoles</li>
+			</ul>
+		</div>
+		<div id="aboutus">
+			<ul>About Us
+				<li>Tronic store live</li>
+				<li>Who are we?</li>
+				<li>Help</li>
+			</ul>
+		</div>
+		<div id="sitemap">
+			<ul>Sitemap
+				<li>Login</li>
+				<li>Signup</li>
+				<li>Cart</li>
+				<li>Home</li>
+			</ul>
+		</div>
+		<div id="contactus">
+			<ul>Contact Us
+				<li>Email</li>
+				<li>FAQ's</li>
+				<li>Call is</li>
+			</ul>
+		</div>
+		<div id="news">
+			<ul>News
+				<li>Google news</li>
+				<li>Tronic news</li>
+			</ul>
+		</div>
+		<div id="lin"></div>
+		<div id="followus">
+			<div id="followtext">Follow us</div><br>
+			<ul>
+				<li id="linli1"></li>
+				<li id="linli2"></li>
+				<li id="linli3"></li>
+				<li id="linli4"></li>
+			</ul>
+		</div>
+	</footer>
+	<div id="copyright">Site created and maintained by Siddharth Raj Dash & Shubam Kumar</div>
+</body>
+</html>

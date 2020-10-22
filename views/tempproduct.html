@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>product page</title>
+</head>
+<style>
+	*{
+		box-sizing: border-box;
+		font-family: Montserrat;
+	}
+		/* width */
+	::-webkit-scrollbar {
+	  width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	  background: #f1f1f1;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	  background: linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	  background: #555;
+	}
+
+	body{
+		margin: 0px;
+	}
+	#titlebar{
+		
+		border: 0px;
+		margin: 0px;
+		width: 100%;
+		height: 50px;
+		background: linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);
+		font-family: Montserrat;
+		font-style: bold;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.23em;
+		color: #FFFFFF;
+		text-align: center;
+		font-weight: bolder;
+		padding-top:10px;
+	}
+
+	.topnav {
+	  overflow: hidden;
+	  background-color: #fff;
+	}
+
+	.topnav a {
+	  float: left;
+	  display: block;
+	  color: #000;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 19px;
+	}
+
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	  transition: 0.2s ease;
+	}
+
+	
+	.topnav .icon {
+	  display: none;
+	}
+	#search{
+		float:right;
+		
+		padding: 10px 10px;
+		width: 300px;
+		
+	}
+	#search2{
+		float:right;
+		border:1px solid #aaa;
+		padding: 4px 6px;
+		width: 300px;
+		text-align: left
+	
+	}
+
+	@media screen and (max-width: 600px) {
+	  .topnav a:not(:first-child) {display: none;}
+	  .topnav a.icon {
+	    float: right;
+	    display: block;
+	  }
+	}
+
+	@media screen and (max-width: 600px) {
+	  .topnav.responsive {position: relative;}
+	  .topnav.responsive .icon {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	  }
+	  .topnav.responsive a {
+	    float: none;
+	    display: block;
+	    text-align: left;
+	  }
+	}
+	#col1{
+		width:10%;
+		height:550px;
+		float: left;
+		text-align: center;
+	}
+	#col2{
+		width:40%;
+		height:550px;
+		float: left;
+	}
+	#col3{
+		width:50%;
+		/*border: 1px solid black;*/
+		height:550px;
+		float: left;
+		padding:5px 30px;
+		overflow-y:scroll;
+	}
+	.image{
+		width:90%;
+		height:100px;
+		margin:7px;
+
+	}
+
+	.mainimage{
+		padding:7px;
+		width:100%;
+		height:100%;
+	}
+	/*#displayimage{
+		background-image: url(https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/HNSF2_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1578592469024);background-size: cover;
+	}*/
+
+	#image1{background-image: url(https://www.jio.com/medias/491584688-i-2-Digital-300Wx300H?context=bWFzdGVyfHJvb3R8MzI0Njl8aW1hZ2UvcG5nfGg3Yi9oOTUvODg1NDQ2NzkwMzUxOC5wbmd8MGNlNzk1NDU0ZWYyYWYzODM4MDQwY2NjYzE4ZDJhZjMxNTcwMGU4ZGNhZWUzZDlkZmI2ZjBlMGRmMzgzYzYwNA);background-size: cover;	}
+	#image2{background-image: url(https://images.macrumors.com/article-new/2019/09/greeniphone11pro-800x601.jpg);background-size: cover;	}
+	#image3{background-image: url(https://suntronix.net/pub/media/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/a/p/apple-iphone-11-pro-mwc22hn-a-original-imafkg2fu4mgqrwh_4.jpeg);background-size: cover;	}
+	#image4{background-image: url(https://suntronix.net/pub/media/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/a/p/apple-iphone-11-pro-mwc22hn-a-original-imafkg2fu4mgqrwh_4.jpeg);background-size: cover;	}
+	#image5{background-image: url(https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/HNSF2_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1578592469024);background-size: cover;	}
+	#productname{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 30px;
+		line-height: 37px;
+		letter-spacing: 0.05em;
+
+	}
+	#productsubname{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 20px;
+		line-height: 30px;
+		letter-spacing: 0.05em;
+
+	}
+	#price{
+		margin-top:30px;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 36px;
+		line-height: 44px;
+		letter-spacing: 0.05em;
+		float: left;
+		margin-right: 30px;
+	}
+	#priceorig{
+		margin-top:45px;
+		margin-right: 30px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0.05em;
+		text-decoration-line: line-through;
+		color: #999999;
+		float:left;
+	}
+	#save{
+		margin-top:45px;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: 0.05em;
+		color: #51A267;
+		float:left;
+	}
+	
+	#addtocart{		
+		margin-top:130px;
+		width: 200px;
+		height: 50px;
+		background: linear-gradient(90deg, #F15151 0%, #E4018E 100%);
+		border-radius: 41px;
+		display: block;
+		clear: left;
+		font-weight: 800;
+		font-size: 16px;
+		color: white;
+		border: none;
+		outline: none;
+
+	}
+	#addtocart:hover{
+		background: #444;
+		transition:all 0.3s ease;
+		
+	}
+	#customize{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 25px;
+		line-height: 30px;
+		letter-spacing: 0.05em;
+		margin-top:30px; 
+
+	}
+	#color{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 30px;
+		letter-spacing: 0.05em;
+		margin-top:20px; 
+	}
+	#colorgroup{
+		width:400px;
+		height:40px;
+		
+
+	}
+	#color1,#color2,#color3,#color4{
+		float:left;
+		height:40px;
+		width:40px;
+		background-color:red;
+		margin-right:20px;
+		border-radius:12px;
+		border:5px solid #eee;
+	}
+	#color1{background-color:#000;	}
+	#color2{background-color:#DA1010;	}
+	#color3{background-color:#c4c4c4;	}
+	#color4{background-color:#fff;	}
+	
+	#color1:hover,#color2:hover,#color3:hover,#color4:hover{
+		-webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        transition: all 0.2s ease;
+	}
+
+	#sizegroup{
+		width:400px;
+		height:40px;
+		
+
+	}
+	#size1,#size2,#size3{
+		float:left;
+		height:40px;
+		width:80px;
+		margin-right:20px;
+		border:2px solid #888;
+		color:#888;
+		padding-top: 7px;
+		text-align: center;
+		font-weight: bold;
+		box-shadow: 2px 2px 4px #aaa;
+	}
+	
+	#size1:hover,#size2:hover,#size3:hover{
+		-webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        transition: all 0.2s ease;
+	}
+
+	table{
+		margin-top: 20px;
+	}
+	.lhs{
+		font-weight: bolder;
+		font-size: 24px;
+		width:30%;
+		text-align: left;
+		padding-top:20px;
+	}
+	.rhs{
+		font-size: 24px;
+		width:70%;
+		text-align: left;
+		padding-top:20px; 
+	}
+	footer{
+		width: 100%;
+		height:190px;
+		background: #5A5A5A;
+		clear: left;
+		
+		margin-top: 50px;
+	}
+	#copyright{
+		background: #C4C4C4;
+		width: 100%;
+		height:45px;
+		font-size: 15px;
+		padding-top: 15px;
+		text-align: center;
+		font-weight: bolder;
+	}
+	#productsf,#aboutus,#news,#contactus,#sitemap{
+		float:left;
+		width:160px;
+		
+		height: 150px;
+		margin-right: 20px;
+		text-align: left;
+	}
+	#productsf{
+		margin-left: 40px;
+	}
+
+	ul{
+		text-align: left;
+		margin: 0px;	
+		font-weight: bolder;
+		font-size: 20px;
+		color: white;
+	}
+	li{
+		list-style: none;
+		font-weight: 500;
+		font-size: 12px;
+		color: white;
+		line-height: 25px;
+		transition: all .2s ease-in-out;
+
+	}
+	li:hover{
+			transform: scale(1.1);
+			font-weight: bolder;
+			text-shadow: 6px 2px 6px #000;
+
+	}
+	#lin{
+		background: #c4c4c4;
+		height:150px;
+		float: left;
+		width:2px;
+	}
+	#followus{
+		float: left;
+	}
+	#linli1,#linli2,#linli3,#linli4{
+		width:45px;
+		height: 45px;
+		float: left;
+		margin-left: 10px;
+	}
+	#followtext{
+		text-align: left;
+		margin-left:47px;	
+		font-weight: bolder;
+		font-size: 20px;
+		color: white;
+
+	}
+	#linli1{
+		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEUAZ5v///8AXpYAXJUAWpSvy9wAbqDx9Pjp8fXz+PoAbJ/B1eIAY5kAYZiryNoAZZrI1+PX5u40fKilxNfR4esAV5LA1OLO2uVNjLKhvtLD2eWBqcVBg6wec6N7psPe6vCQtMy7z91rnLwweqdZkbWUs8tel7lrmboFiN0SAAADVElEQVR4nO3b7VbaMACA4SQt0EJjLAIKVPl0u/87XOdwCklFV5bQ+D4/Z85OX5O2oVQhAAAAAAAAAAAAAAAAAAAAAHxZoZOaLkIfx39itHqYL8pyMX9ItAl9NP9BUSxzeZAti/jmUY9L+U451qGP6MJ0lcsjeRVXonmUlseYzkWjS7twlUSUqJ/sQCmf4lmnpli5Clfx3DNM5QqUch/NLUOv3YXraJap2rgLRyr0kV2KWrgLJ9EX3iehj+xSmlbpJpo5jP9K03S3qOK5H7o2bfUdP5pFWi/TratwG80irSW3duAkmivpb8Zkp4GZiOYsfFHsThKzXTSb0oOiP3ofOOrHFlgvVLX/e0Ut9yquJXpQpLvl3WZzt3xM45vAA6NVLZ4PvkCXqNRJnR9ytO8xWqsk+fPvibqmL3hUL3PqvSWquXvI7JBodJKaajnvzSblKstW5eLm+UEn17KzbfqMf/s2Q6rnHnLYvOrh08ja99U/3YrraGxbaPQ6d/9YZuuraGxZqHfOB8qvjdtpwLTXw29VWIybJvBgZoJfc1oVmv6ZwHoax6ETWxWmk3OBUuahE9sUTp0PQKzEfti9bqtCx03CoQw7iW0K958KlHIe9MHdZwpvGgobym1VyFlsUbj66FZ4/LtIu1n4BSG/b/VTGHIS/RTKcbg7hqfCgJdTT4VZEWwS1ch9SBcuDPhtna/CcN+4+iq8D3Yi+irMQgV6K5S7UCeit8IfobY1FynM88FgcObj/nOoS03rwnL9s9r1hRGP1Xb2wbhNqC/OWxZOKqULU59iRhij1a7hf6stulm4nh6fXcV03jR0FWrz3apwaR21SRt2gTIP9ei0TeHI8Ta4GTf9OrpY6Hw44Xo950UHV6n7zHK/GV/r4P3Q/YJm06uA0lvSiRaFPff1v+lJ/9BX0omLFxode6FIB+7hfV9JJ75B4b8/p+lKYfxzSCGFFgp9o1BQaKHQNwoFhRYKffu+hfcUUkihNxQKCi0U+kahoNBCoW8UCgotFPpGoaDQQqFvFAoKLRT6RqGg0HJ1hQ3v11PYocLoV6ne5E6jt8PXd+4hN+4/R0sz5+hghWbY4N2YYd+p6ZVY9+hQgQAAAAAAAAAAAAAAAAAAAAAAAAAAfEu/AJj6S0NNKetyAAAAAElFTkSuQmCC);
+		background-size: cover;
+	}
+	#linli2{
+		background-image:url(https://cdn.iconscout.com/icon/free/png-512/facebook-square-1868981-1583145.png);
+		background-size: cover;
+	}
+	#linli3{
+		background-image:url(data:image/png;base64,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);
+		background-size: cover;
+	}
+	#linli4{
+		background-image:url(https://www.socialtalent.com/wp-content/uploads/2015/11/Pinterest-Logo.png);
+		background-size: cover;
+	}
+	hr{
+		margin:0px;
+	}
+
+
+img {
+  display: block;
+  margin: 20px auto;
+  height: 90%
+  border: 1px solid rgba(255,255,255,0.2);
+  -webkit-transition: -webkit-filter 500ms;
+}
+
+#zoom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  margin: -125px 0 0 -125px;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 2px rgba(255,0,0,0.5),
+    5px 5px 10px 5px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -webkit-transition: opacity 500ms, -webkit-transform 500ms;
+  pointer-events: none;
+}
+
+.active #zoom {
+  opacity: 1;
+  -webkit-transform: scale(1);
+}
+
+
+</style>
+<body>
+	<div id="titlebar">THE TRONICS STORE</div>
+	<div class="topnav" id="myTopnav">
+  		<a>LAPTOPS</a>
+  		<a>MOBILES</a>
+  		<a>CONSOLES</a>
+  		<a>CAMERAS</a>
+  		<a id="search"><div id="search2">search</div></a>
+  		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    	<i class="fa fa-bars"></i>
+  		</a>
+	</div>
+	
+	<br>
+	<br>
+
+	<div id="col1">
+		<div class="image" id="image1"></div>
+		<div class="image" id="image2"></div>
+		<div class="image" id="image3"></div>
+		<div class="image" id="image4"></div>
+		<div class="image" id="image5"></div>
+	</div>
+	<div id="col2">
+		<img class="mainimage" id="displayimage" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/HNSF2_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1578592469024">
+		  <div id="zoom"></div>
+	</div>
+	<div id="col3">
+		<div id="productname">Iphone 11 Pro</div>
+		<div id="productsubname">Matt Black 256 GB </div>
+		<div id="pricegroup">
+			<div id="price">₹54,999</div>
+			<div id="priceorig">₹77,999</div>
+			<div id="save">₹13,000</div>
+		</div>
+		<button id="addtocart">Add to cart</button>
+		<div id="customize">Customize:</div>
+		<div id="color">Color:</div>
+		<div id="colorgroup">
+			<div id="color1"></div>
+			<div id="color2"></div>
+			<div id="color3"></div>
+			<div id="color4"></div>
+		</div>
+		<div id="color">Size:</div>
+		<div id="sizegroup">
+			<div id="size1">64GB</div>
+			<div id="size2">128GB</div>
+			<div id="size3">256GB</div>
+		</div>
+		<div id="customize">Specifications:</div>
+		<table id="specs">
+		  <tr>
+		    <td class="lhs">Product:</td>
+		    <td class="rhs">Iphone 11 Pro</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">Weight:</td>
+		    <td class="rhs">278g</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">Processor:</td>
+		    <td class="rhs">A12 bionic chip Octa core</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">RAM:</td>
+		    <td class="rhs">1366 MHZ 4 GB</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">Storage:</td>
+		    <td class="rhs">256 GB internal non expd</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">SIM:</td>
+		    <td class="rhs">Dual SIM 1GSM + 1 ESIM</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">Front Camera:</td>
+		    <td class="rhs">Dual 16MP f1.6 main camera + 7MP f2.0 Depth sensor</td>
+		  </tr>
+		  <tr>
+		    <td class="lhs">Rear Camera:</td>
+		    <td class="rhs">Dual 32MP f1.6 main camera + 16MP f1.0 Telephoto lens</td>
+		  </tr>
+
+		</table>
+		<br>
+		<br>
+	</div>
+
+	<div style="height:30px;"></div>		
+	<footer>
+		<div style="height:30px; background-color: white;"></div>		
+		<div style="height:20px; background-color:#5A5A5A;"></div>		
+		<div id="productsf">
+			<ul>Products
+				<li>Laptops</li>
+				<li>mobiles</li>
+				<li>cameras</li>
+				<li>consoles</li>
+			</ul>
+		</div>
+		<div id="aboutus">
+			<ul>About Us
+				<li>Tronic store live</li>
+				<li>Who are we?</li>
+				<li>Help</li>
+			</ul>
+		</div>
+		<div id="sitemap">
+			<ul>Sitemap
+				<li>Login</li>
+				<li>Signup</li>
+				<li>Cart</li>
+				<li>Home</li>
+			</ul>
+		</div>
+		<div id="contactus">
+			<ul>Contact Us
+				<li>Email</li>
+				<li>FAQ's</li>
+				<li>Call is</li>
+			</ul>
+		</div>
+		<div id="news">
+			<ul>News
+				<li>Google news</li>
+				<li>Tronic news</li>
+			</ul>
+		</div>
+		<div id="lin"></div>
+		<div id="followus">
+			<div id="followtext">Follow us</div><br>
+			<ul>
+				<li id="linli1"></li>
+				<li id="linli2"></li>
+				<li id="linli3"></li>
+				<li id="linli4"></li>
+			</ul>
+		</div>
+	</footer>
+	<div id="copyright">Site created and maintained by Siddharth Raj Dash & Shubam Sharma
+	</div>
+
+</body>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+
+
+(function() {
+  var zoom = document.getElementById( 'zoom' ),
+      Zw = zoom.offsetWidth,
+      Zh = zoom.offsetHeight,
+      img = document.querySelector( 'img' );
+      
+  
+  var timeout, ratio, Ix, Iy;
+
+  function activate () {
+    document.body.classList.add( 'active' );
+  }
+  
+  function deactivate() {
+    document.body.classList.remove( 'active' );
+  }
+  
+  function updateMagnifier( x, y ) {
+    zoom.style.top = ( y ) + 'px';
+    zoom.style.left = ( x ) + 'px';
+    zoom.style.backgroundPosition = (( Ix - x ) * ratio + Zw / 2 ) + 'px ' + (( Iy - y ) * ratio + Zh / 2 ) + 'px';
+  }
+  
+  function onLoad () {
+    ratio = img.naturalWidth / img.width;
+    zoom.style.backgroundImage = 'url(' + img.src + ')';
+    Ix = img.offsetLeft;
+    Iy = img.offsetTop;
+  }
+  
+  function onMousemove( e ) {
+    clearTimeout( timeout );
+    activate();
+    updateMagnifier( e.x, e.y );
+    timeout = setTimeout( deactivate, 2500 );
+  }
+  
+  function onMouseleave () {
+    deactivate();
+  }
+
+  img.addEventListener( 'load', onLoad );
+  img.addEventListener( 'mousemove', onMousemove );
+  img.addEventListener( 'mouseleave', onMouseleave );
+
+})();
+
+var imgobj={"img1":"https://www.jio.com/medias/491584688-i-2-Digital-300Wx300H?context=bWFzdGVyfHJvb3R8MzI0Njl8aW1hZ2UvcG5nfGg3Yi9oOTUvODg1NDQ2NzkwMzUxOC5wbmd8MGNlNzk1NDU0ZWYyYWYzODM4MDQwY2NjYzE4ZDJhZjMxNTcwMGU4ZGNhZWUzZDlkZmI2ZjBlMGRmMzgzYzYwNA","img2":"https://images.macrumors.com/article-new/2019/09/greeniphone11pro-800x601.jpg","img3":"https://suntronix.net/pub/media/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/a/p/apple-iphone-11-pro-mwc22hn-a-original-imafkg2fu4mgqrwh_4.jpeg","img4":"https://suntronix.net/pub/media/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/a/p/apple-iphone-11-pro-mwc22hn-a-original-imafkg2fu4mgqrwh_4.jpeg","img5":"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/HNSF2_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1578592469024"}
+</script>
+</html>

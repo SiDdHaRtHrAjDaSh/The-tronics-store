@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/cart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>cart</title>
+	<style>
+		*{
+		box-sizing: border-box;
+		font-family: Montserrat;
+	}
+		/* width */
+	::-webkit-scrollbar {
+	  width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	  background: #f1f1f1;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	  background: linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	  background: #555;
+	}
+
+	body{
+		margin: 0px;
+	}
+	#titlebar{
+		
+		border: 0px;
+		margin: 0px;
+		width: 100%;
+		height: 50px;
+		background: linear-gradient(90.03deg, #F15151 2.29%, #E4018E 98%);
+		font-family: Montserrat;
+		font-style: bold;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.23em;
+		color: #FFFFFF;
+		text-align: center;
+		font-weight: bolder;
+		padding-top:10px;
+	}
+
+	.topnav {
+	  overflow: hidden;
+	  background-color: #fff;
+	}
+
+	.topnav a {
+	  float: left;
+	  display: block;
+	  color: #000;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 19px;
+	}
+
+	.topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+	  transition: 0.2s ease;
+	}
+
+	
+	.topnav .icon {
+	  display: none;
+	}
+	#search{
+		float:right;
+		
+		padding: 10px 10px;
+		width: 300px;
+		
+	}
+	#search2{
+		float:right;
+		border:1px solid #aaa;
+		padding: 4px 6px;
+		width: 300px;
+		text-align: left
+	
+	}
+
+	@media screen and (max-width: 600px) {
+	  .topnav a:not(:first-child) {display: none;}
+	  .topnav a.icon {
+	    float: right;
+	    display: block;
+	  }
+	}
+
+	@media screen and (max-width: 600px) {
+	  .topnav.responsive {position: relative;}
+	  .topnav.responsive .icon {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	  }
+	  .topnav.responsive a {
+	    float: none;
+	    display: block;
+	    text-align: left;
+	  }
+	}
+
+	footer{
+		width: 100%;
+		height:190px;
+		background: #5A5A5A;
+		clear: left;
+		padding-top: 20px;
+	}
+	#copyright{
+		background: #C4C4C4;
+		width: 100%;
+		height:45px;
+		font-size: 15px;
+		padding-top: 15px;
+		text-align: center;
+		font-weight: bolder;
+	}
+	#productsf,#aboutus,#news,#contactus,#sitemap{
+		float:left;
+		width:160px;
+		
+		height: 150px;
+		margin-right: 20px;
+		text-align: left;
+	}
+	#productsf{
+		margin-left: 40px;
+	}
+
+	ul{
+		text-align: left;
+		margin: 0px;	
+		font-weight: bolder;
+		font-size: 20px;
+		color: white;
+	}
+	li{
+		list-style: none;
+		font-weight: 500;
+		font-size: 12px;
+		color: white;
+		line-height: 25px;
+		transition: all .2s ease-in-out;
+
+	}
+	li:hover{
+			transform: scale(1.1);
+			font-weight: bolder;
+
+	}
+	#lin{
+		background: #c4c4c4;
+		height:150px;
+		float: left;
+		width:2px;
+	}
+	#followus{
+		float: left;
+	}
+	#linli1,#linli2,#linli3,#linli4{
+		width:45px;
+		height: 45px;
+		float: left;
+		margin-left: 10px;
+	}
+	#followtext{
+		text-align: left;
+		margin-left:47px;	
+		font-weight: bolder;
+		font-size: 20px;
+		color: white;
+
+	}
+	#linli1{
+		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEUAZ5v///8AXpYAXJUAWpSvy9wAbqDx9Pjp8fXz+PoAbJ/B1eIAY5kAYZiryNoAZZrI1+PX5u40fKilxNfR4esAV5LA1OLO2uVNjLKhvtLD2eWBqcVBg6wec6N7psPe6vCQtMy7z91rnLwweqdZkbWUs8tel7lrmboFiN0SAAADVElEQVR4nO3b7VbaMACA4SQt0EJjLAIKVPl0u/87XOdwCklFV5bQ+D4/Z85OX5O2oVQhAAAAAAAAAAAAAAAAAAAAAHxZoZOaLkIfx39itHqYL8pyMX9ItAl9NP9BUSxzeZAti/jmUY9L+U451qGP6MJ0lcsjeRVXonmUlseYzkWjS7twlUSUqJ/sQCmf4lmnpli5Clfx3DNM5QqUch/NLUOv3YXraJap2rgLRyr0kV2KWrgLJ9EX3iehj+xSmlbpJpo5jP9K03S3qOK5H7o2bfUdP5pFWi/TratwG80irSW3duAkmivpb8Zkp4GZiOYsfFHsThKzXTSb0oOiP3ofOOrHFlgvVLX/e0Ut9yquJXpQpLvl3WZzt3xM45vAA6NVLZ4PvkCXqNRJnR9ytO8xWqsk+fPvibqmL3hUL3PqvSWquXvI7JBodJKaajnvzSblKstW5eLm+UEn17KzbfqMf/s2Q6rnHnLYvOrh08ja99U/3YrraGxbaPQ6d/9YZuuraGxZqHfOB8qvjdtpwLTXw29VWIybJvBgZoJfc1oVmv6ZwHoax6ETWxWmk3OBUuahE9sUTp0PQKzEfti9bqtCx03CoQw7iW0K958KlHIe9MHdZwpvGgobym1VyFlsUbj66FZ4/LtIu1n4BSG/b/VTGHIS/RTKcbg7hqfCgJdTT4VZEWwS1ch9SBcuDPhtna/CcN+4+iq8D3Yi+irMQgV6K5S7UCeit8IfobY1FynM88FgcObj/nOoS03rwnL9s9r1hRGP1Xb2wbhNqC/OWxZOKqULU59iRhij1a7hf6stulm4nh6fXcV03jR0FWrz3apwaR21SRt2gTIP9ei0TeHI8Ta4GTf9OrpY6Hw44Xo950UHV6n7zHK/GV/r4P3Q/YJm06uA0lvSiRaFPff1v+lJ/9BX0omLFxode6FIB+7hfV9JJ75B4b8/p+lKYfxzSCGFFgp9o1BQaKHQNwoFhRYKffu+hfcUUkihNxQKCi0U+kahoNBCoW8UCgotFPpGoaDQQqFvFAoKLRT6RqGg0HJ1hQ3v11PYocLoV6ne5E6jt8PXd+4hN+4/R0sz5+hghWbY4N2YYd+p6ZVY9+hQgQAAAAAAAAAAAAAAAAAAAAAAAAAAfEu/AJj6S0NNKetyAAAAAElFTkSuQmCC);
+		background-size: cover;
+	}
+	#linli2{
+		background-image:url(https://cdn.iconscout.com/icon/free/png-512/facebook-square-1868981-1583145.png);
+		background-size: cover;
+	}
+	#linli3{
+		background-image:url(data:image/png;base64,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);
+		background-size: cover;
+	}
+	#linli4{
+		background-image:url(https://www.socialtalent.com/wp-content/uploads/2015/11/Pinterest-Logo.png);
+		background-size: cover;
+	}
+	hr{
+		margin:0px;
+	}
+
+	#col1{
+		width:100%;
+	}
+	#col2{
+		width:25%;
+		
+	}
+	#col1,#col2{
+		float:left;
+		height:600px;
+
+	}
+
+
+	
+	</style>
+</head>
+<body>
+
+	<div id="titlebar">THE TRONICS STORE</div>
+	<div class="topnav" id="myTopnav">
+  		<a onclick="gohome()">HOME</a>
+  		
+  		
+	</div>
+	
+	<br>
+	<br>
+
+<style>
+	.product{
+		width:100%;
+		height:175px;
+			
+		padding-left: 40px;
+
+	}
+	#productimage1,#productimage2,#productimage3{
+		float:left;
+		height:175px;
+		width:175px;
+		background-color: white;
+		background-size: cover;
+		margin-right: 40px;
+	}
+	
+	#productimage2{
+		background-image:url('https://cdn.vox-cdn.com/thumbor/05Jlr3BCa5clWpYP96YH_ZVbCjM=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13669186/Alienware_m17_1.jpg');
+	}
+	#productimage3{
+		background-image:url('https://www.powerplanetonline.com/cdnassets/gopro_hero_8_black_03_ad_l.jpg');
+	}
+
+	.namecontainer{
+		float:left;
+		height:175px;
+		width:400px;
+		background-color: white;
+		
+		font-size: 25px;
+		font-weight: 600;
+
+	}
+	.productname{
+		
+		background-color: white;
+		margin-top: 20px;
+		font-size: 25px;
+		font-weight: 600;
+		
+
+	}
+	.productname2{
+		margin-top: 5px;
+		background-color: white;
+		font-size: 20px;
+		font-weight: 600;
+		
+
+	}
+	.delbutton{
+		width: 92px;
+		height: 31px;
+		background: #ED4545;
+		border-radius: 4px;
+		border: 0px;
+		font-size:15px;
+		font-weight: bold;
+		color:white;
+		margin-top:40px;
+	}
+	.pricecontainer{
+		float:left;
+		
+		margin-left: 70px;
+		margin-top:20px;
+		background-color: white;
+		
+		font-size: 25px;
+		font-weight: 600;
+	}
+	.price{
+		font-size:35px;
+		letter-spacing: 5px;
+	}
+	#container{
+		width:95%;
+		height:450px;
+		background: linear-gradient(180deg, #EEEEEE 0%, #F8F8F8 100%);
+		margin-left: 25px
+	}
+</style>
+	<div id="col1" style="text-align: center;">
+		
+<h1>Thankyou for shopping with us</h1><br><br>
+<button style="height:60px;width:200px;font-size: 30px;color: white;font-weight: bold;background: linear-gradient(90deg, #F15151 4.85%, #E4018E 92.31%); "onclick="gohome()">Home</button>
+
+		
+	</div>
+	<style>
+		#headingtext{
+			width:100%;
+			text-align: center;
+			font-size: 29px;
+			font-weight: bolder;
+			padding-top: 25px;
+		}
+		table{
+			padding:20px;
+			padding-left:30px;			
+			border-spacing:0px 12px;
+		}
+		td{
+			width:50%;
+			text-align:left;
+			font-size: 19px;
+			font-weight: bold;
+		}
+		.grandtotal{
+			font-size: 25px;
+			font-weight: bolder;
+			padding-left: 30px;
+		}
+		.grandtotalnum{
+			font-size: 34px;
+			font-weight: bolder;
+			padding-left: 30px;
+			letter-spacing: 3px;
+			float:left;
+		}
+		.incltaxes{
+			float:left;
+			width:100px;
+			padding-left: 10px;
+		}
+		.yousave{
+			padding-left: 30px;
+			clear: left;
+			color:#0A7800;
+			font-weight: 800;
+			padding-top: 30px;
+		}
+		.buttoncontain{
+			text-align: center;
+		}
+		.chkout{
+			width: 299px;
+			height: 42px;
+			background: linear-gradient(90deg, #F15151 4.85%, #E4018E 92.31%);
+			font-size:16px;
+			color:white;
+			font-weight: bolder;
+			border: 0px;
+
+		}
+		
+
+	</style>
+
+	
+
+
+
+
+	<footer>
+		<div id="productsf">
+			<ul>Products
+				<li>Laptops</li>
+				<li>mobiles</li>
+				<li>cameras</li>
+				<li>consoles</li>
+			</ul>
+		</div>
+		<div id="aboutus">
+			<ul>About Us
+				<li>Tronic store live</li>
+				<li>Who are we?</li>
+				<li>Help</li>
+			</ul>
+		</div>
+		<div id="sitemap">
+			<ul>Sitemap
+				<li>Login</li>
+				<li>Signup</li>
+				<li>Cart</li>
+				<li>Home</li>
+			</ul>
+		</div>
+		<div id="contactus">
+			<ul>Contact Us
+				<li>Email</li>
+				<li>FAQ's</li>
+				<li>Call is</li>
+			</ul>
+		</div>
+		<div id="news">
+			<ul>News
+				<li>Google news</li>
+				<li>Tronic news</li>
+			</ul>
+		</div>
+		<div id="lin"></div>
+		<div id="followus">
+			<div id="followtext">Follow us</div><br>
+			<ul>
+				<li id="linli1"></li>
+				<li id="linli2"></li>
+				<li id="linli3"></li>
+				<li id="linli4"></li>
+			</ul>
+		</div>
+	</footer>
+	<div id="copyright">Site created and maintained by Siddharth Raj Dash & Shubam Sharma
+	</div>
+
+</body>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</html>

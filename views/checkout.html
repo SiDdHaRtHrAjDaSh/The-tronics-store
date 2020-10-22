@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link rel="stylesheet" href='checkout.css'>
+  	<title>The Tronic Store</title>
+</head>
+<body>
+	<!-- Title Bar -->
+	<div class="bar">
+		<center><p id="title">THE TRONICS STORE</p></center>
+	</div>
+
+	<!-- Body div -->
+	<div class="container">
+		<!-- Checkout-->
+		<p id="checkout" style="font-size: 30px;">Checkout</p>
+
+	</div>
+<style>
+	input{
+		outline: none;
+		border: 0px;
+		
+	}
+	input:hover{
+		background: #333;
+
+	}
+
+
+body {
+	background: linear-gradient(-45deg, rgba(255,255,255,1) 28%, rgba(198,198,198,1) 50%, rgba(255,255,255,1) 75%);
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
+<div>	
+<div id="leftext" class="field-wrap" style="float: left; width: 800px; margin-top: 40px;">
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">Full Name:</label><br><br>
+	<input type="text" style="background-color: #e3e3e3; height: 40px; width: 700px;"  id="name" oninput="namecheck()" /></div><br>
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">Email:</label><br><br>
+	<input type="text" style="background-color: #e3e3e3; height: 40px; width: 700px;"  id="email" oninput="checkemail()" /></div><br>
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">Adderss:</label><br><br>
+	<input type="Adderss" style="background-color: #e3e3e3; height: 90px; width: 700px;" id="address" oninput="checkaddress()" /></div><br>
+	<div  style="margin-left: 200px;"><label style="font-size: 18px;">Country:</label><br><br>
+	<input type="text" style="background-color:#e3e3e3; height: 40px; width: 700px;" id="country" oninput="checkreq(this.id)"/></div><br>
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">State:</label><br><br>
+	<input type="text" style="background-color: #e3e3e3; height: 40px; width: 700px;" id="state" oninput="checkreq(this.id)"/></div><br>
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">City:</label><br><br>
+	<input type="text" style="background-color: #e3e3e3; height: 40px; width: 700px;" id="city" oninput="checkreq(this.id)"/></div><br>
+	<div style="margin-left: 200px;"><label style="font-size: 18px;">Zip:</label><br><br>
+	<input type="text" style="background-color: #e3e3e3; height: 40px; width: 700px;" id="zip" oninput="checkzip()"/></div><br>
+</div>
+<div id="col2" style="float: right; margin-right: 200px; margin-top: 80px;">
+		<div id="container" style="height: 350px;">
+			<div id="headingtext">Cart summary</div>
+			
+			<table style="width:100%">
+			  <tr>
+			    <td style="font-size: 14px;">Total itmes:</td>
+			    <td style="font-size: 14px;">3</td>
+			    
+			  </tr>
+			  <tr>
+			    <td style="font-size: 14px;">item total:</td>
+			    <td style="font-size: 14px;">₹1,58,765</td>
+			    
+			  </tr>
+			  <tr>
+			  	<td style="font-size: 14px;">delivery total:</td>
+			  	<td style="font-size: 14px;">₹59</td>
+			  </tr>
+			</table>
+
+			<div  class="grandtotal" style="font-size: 18px;">Grand total:</div><br>
+			<div id="gtotalcontainer">
+				<div  class="grandtotalnum">₹1,60,324</div>
+				<div class="incltaxes">Inclusive of all taxes</div>
+			</div>	
+			<div  class="yousave">You save ₹31,543</div><br>
+
+		</div>
+	</div>
+</div>
+
+<div class="paymentcontainer" style="margin-right: 200px;"><p style="font-weight: bold; margin-top: 480px; margin-left: 962px; font-size: 23px;">Payment Method:<br></p>
+
+	<div id="errorline" style="margin-left: 1000px;color:red;"></div> <br>
+
+  <div class="payment" id="payment" style="margin-left: 962px;"><input type="radio" id="card" name="method" value="card">
+  <label for="male">Credit/Debit Card</label>
+  <div style="float: right;"><img src="https://i7.pngguru.com/preview/1013/540/61/5bbf4cb1c2f87.jpg" style="height: 25px; width: 80px;">
+  </div></div><br>
+  <div class="payment" id="payment" style="margin-left: 962px;"><input type="radio" id="upi" name="method" value="upi">
+  <label for="female">BHIM/UPI</label>
+  <div style="float: right;"><img src="https://economictimes.indiatimes.com/thumb/msid-74960608,width-1200,height-900,resizemode-4,imgsize-49172/upi-twitter.jpg?from=mdr" style="height: 40px; margin-top: -10px; width: 60px;">
+  </div></div><br>
+  <div class="payment" id="payment" style="margin-left: 962px; right: 200px;"><input type="radio" id="cod" name="method" value="cod">
+  <label for="other">Cash on Delivery</label>
+  <div style="float: right;"><img src="https://cdn1.iconfinder.com/data/icons/marketplace-and-shipping-outline/64/COD_cash_on_delivery_shipping_payment_delivery-512.png" style="height: 50px; margin-top: -15px;">
+  </div></div><br></div>
+</div>
+<br><br>
+
+<center><button class="chkout" style="margin-left: 0px;" id="checkout" onclick="checkeverything()">Place Order</button></center><br><br>
+	<!--Footer-->
+	<footer>
+		<div id="productsf">
+			<ul>Products
+				<li>Laptops</li>
+				<li>mobiles</li>
+				<li>cameras</li>
+				<li>consoles</li>
+			</ul>
+		</div>
+		<div id="aboutus">
+			<ul>About Us
+				<li>Tronic store live</li>
+				<li>Who are we?</li>
+				<li>Help</li>
+			</ul>
+		</div>
+		<div id="sitemap">
+			<ul>Sitemap
+				<li>Login</li>
+				<li>Signup</li>
+				<li>Cart</li>
+				<li>Home</li>
+			</ul>
+		</div>
+		<div id="contactus">
+			<ul>Contact Us
+				<li>Email</li>
+				<li>FAQ's</li>
+				<li>Call is</li>
+			</ul>
+		</div>
+		<div id="news">
+			<ul>News
+				<li>Google news</li>
+				<li>Tronic news</li>
+			</ul>
+		</div>
+		<div id="lin"></div>
+		<div id="followus">
+			<div id="followtext">Follow us</div><br>
+			<ul>
+				<li id="linli1"></li>
+				<li id="linli2"></li>
+				<li id="linli3"></li>
+				<li id="linli4"></li>
+			</ul>
+		</div>
+	</footer>
+	<div id="copyright">Site created and maintained by Siddharth Raj Dash & Shubam Kumar</div>
+  	
+
+
+
+  	<script>
+  		var error={"name":1,"email":1,"country":1,"state":1,"city":1,"address":1};
+
+  			function namecheck(){
+			var name=document.getElementById("name").value;
+			
+			var re = /^[A-Za-z_ ]+$/;
+
+			if(name.match(re) && name.length!=0)
+			{
+				console.log(true);
+				error.name=0;
+				document.getElementById("name").style.border="0px";
+				
+			}
+			else
+			{
+				console.log(false);
+				error.name=1;
+				document.getElementById("name").style.border="1px solid red";
+			}
+		}
+
+			function checkemail(){
+			var email=document.getElementById("email").value;
+			
+			var re = /^[a-z0-9](\.?[a-z0-9]){5,}@gmail\.com$/
+
+			if(email.match(re) && email.length!=0)
+			{
+				console.log(true);
+				error.email=0;
+				document.getElementById("email").style.border="0px";
+			}
+			else
+			{
+				console.log(false);
+				error.email=1;
+				document.getElementById("email").style.border="1px solid red";
+			}
+		}
+
+  			function checkreq(id){
+			var check=document.getElementById(id).value;
+			console.log(check.length);
+			var re = /^[A-Za-z_ ]+$/;
+
+			if(check.match(re) && check.length!=0)
+			{
+				console.log(true);
+				error[id]=0;
+				document.getElementById(id).style.border="0px";
+			}
+			else
+			{
+				console.log(false);
+				error[id]=1;
+				document.getElementById(id).style.border="1px solid red";
+			}
+		}
+
+		function checkaddress(){
+			var check=document.getElementById("address").value;
+			console.log(check.length);
+			var re = /^[A-Za-z0-9_ ]+$/;
+
+			if(check.match(re) && check.length!=0)
+			{
+				console.log(true);
+				error.address=0;
+				document.getElementById("address").style.border="0px";
+			}
+			else
+			{
+				console.log(false);
+				error.address=1;
+				document.getElementById("address").style.border="1px solid red";
+			}
+		}
+
+			function checkzip(){
+			var zip=document.getElementById("zip").value;
+			console.log(zip.length);
+			var re = /^[1-9][0-9]{5}$/
+
+			if(zip.match(re) && zip.length!=0)
+			{
+				console.log(true);
+				error.zip=0;
+				document.getElementById("zip").style.border="0px";
+			}
+			else
+			{
+				console.log(false);
+				error.zip=1;
+				document.getElementById("zip").style.border="1px solid red";
+			}
+		}
+
+
+		function checkeverything()
+		{
+			if(card.checked==false && upi.checked==false && cod.checked==false)
+			{
+				document.getElementById("errorline").innerHTML="Please select payment method";
+			}
+			else if(error.name==0 && error.email==0 && error.city==0 && error.state==0 && error.country==0 && error.zip==0 && error.address==0)
+			{
+				alert("Successfully submitted");
+			}
+			else{
+				alert("There are some errors please re check the form");
+			}
+		}
+
+			function myFunction() {
+		  	var x = document.getElementById("myTopnav");
+		  	if (x.className === "topnav") {
+		    	x.className += " responsive";
+		  } else {
+		    	x.className = "topnav";
+		  }
+			}
+	</script>
+</body>
+</html>
